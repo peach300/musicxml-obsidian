@@ -64,7 +64,7 @@ export function buildSettingsSection<T extends Record<string, any>>(
 	heading: string,
 	schema: SchemaMap<T>,
 	values: T,
-	onChange: (key: string, value: any) => void,
+	onChange: (key: keyof T, value: any) => void,
 ) {
 	containerEl.createEl('h3', { text: heading });
 
