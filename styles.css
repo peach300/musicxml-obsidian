@@ -1,8 +1,17 @@
-/*
-
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
+.musicxml-container {
+  width: 100%;
+  overflow: auto;
+  /* border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: var(--size-4-3); */
+}
+.musicxml-error {
+  color: red;
+  font-size: 0.85em;
+}
+.musicxml-control-label {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+  margin-left: 4px;
+  text-align: left;
+}
