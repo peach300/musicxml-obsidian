@@ -30,7 +30,7 @@ export class MusicXMLSettingTab extends PluginSettingTab {
 			FONT_SCHEMA, 
 			this.plugin.settings.defaults as MusicXMLFontOptions,
 			async (key, value) => {
-				this.plugin.settings.defaults![key] = value;
+				(this.plugin.settings.defaults as any)[key] = value;
 				await this.plugin.saveSettings();
 			}
 		);
@@ -41,7 +41,7 @@ export class MusicXMLSettingTab extends PluginSettingTab {
 			COLOR_SCHEMA,
 			this.plugin.settings.defaults as MusicXMLColorOptions,
 			async (key, value) => {
-				this.plugin.settings.defaults![key] = value;
+				(this.plugin.settings.defaults as any)[key] = value;
 				await this.plugin.saveSettings();
 			}
 		);
@@ -52,7 +52,7 @@ export class MusicXMLSettingTab extends PluginSettingTab {
 			LAYOUT_SCHEMA, 
 			this.plugin.settings.defaults as MusicXMLLayoutOptions,
 			async (key, value) => {
-				this.plugin.settings.defaults![key] = value;
+				(this.plugin.settings.defaults as any)[key] = value;
 				await this.plugin.saveSettings();
 			}
 		);
@@ -64,7 +64,7 @@ export function buildSettingsSection<T extends Record<string, any>>(
 	heading: string,
 	schema: SchemaMap<T>,
 	values: T,
-	onChange: (key: keyof T, value: any) => void,
+	onChange: (key: string, value: any) => void,
 ) {
 	containerEl.createEl('h3', { text: heading });
 
